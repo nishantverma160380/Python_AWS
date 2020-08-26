@@ -1,0 +1,45 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+# Python
+__pycache__
+*.pyc
+site-packages/
+site-packages.zip
+
+# Test Suite
+.coverage
+coverage.xml
+tests/reports/*
+htmlcov/
+.pytest_cache
+unit_test_report.xml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+# Mac
+.DS_Store
+
+.idea/jenkins-lambda-clone.iml
+.idea/modules.xml
+.idea/vcs.xml
+
+# Maven
+log/
+target/
+
+#
+.venv
+venv
+.terraform
+mor-terraform-aws-modules
+peacock-terraform-aws-modules
+/.metadata/
+/.recommenders/
+.scannerwork/
+*.log

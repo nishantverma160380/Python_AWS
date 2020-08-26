@@ -1,0 +1,106 @@
+DynamoDB:
+  - "{ENV}.xxwmm.app-adapter-task-static-dependency"
+  - "{ENV}.xxwmm.reference-data-record"
+
+lambda:
+  - lmb-euw1-{ENV}-people-cloudwatch-to-datadog-peacock-001
+  - lmb-euw1-{ENV}-people-hcm-task-trigger-peacock-001
+  - lmb-euw1-{ENV}-people-retry-integration-task-peacock-001
+  - lmb-euw1-{ENV}-people-extract-task-trigger-peacock-001
+  - lmb-euw1-{ENV}-people-janitor-peacock-001
+  - lmb-euw1-{ENV}-people-decrypt-file-to-google-drive-peacock-001
+  - lmb-euw1-{ENV}-people-rerun-task-peacock-001
+
+docker:
+  - peacock/consolidated-daily-jml-extract-controller
+  - peacock/consolidated-daily-jml-extract-controller
+  - peacock/consolidated-full-extract-controller
+  - peacock/consolidated-weekly-benefit-extract-controller
+  - peacock/reflexis-upload-controller
+  - peacock/empcenter-upload-controller
+  - peacock/int-100-car-colleagues-hcm-to-zenith
+  - peacock/int-101-contributions-hcm-to-aviva
+  - peacock/int-102-enrolcomms-hcm-to-aviva
+  - peacock/int-103-postpone-hcm-to-aviva
+  - peacock/int-104-surname-hcm-to-aviva
+  - peacock/int-105-address-hcm-to-aviva
+  - peacock/int-106-terminate-hcm-to-aviva
+  - peacock/int-107-pensionoptinout-aviva-to-hcm
+  - peacock/int-108-contrib-aviva-to-hcm
+  - peacock/int-109-optout-end-aviva-to-hcm
+  - peacock/int-110-colleague-hcm-to-barclaycard
+  - peacock/int-111-colleague-hcm-to-nuffield
+  - peacock/int-112-colleague-hcm-to-tmc
+  - peacock/int-113-colleague-mileage-to-hcm
+  - peacock/int-119-refunds-capita-to-hcm
+  - peacock/int-121-colleague-hcm-to-edm
+  - peacock/int-122-colleague-hcm-to-opentext
+  - peacock/int-123-colleague-hcm_to-lms
+  - peacock/int-125-colleague-hcm-to-hht
+  - peacock/int-126-colleague-hcm-to-mf
+  - peacock/int-127-colleague-hcm-to-crm
+  - peacock/int-128-bacs-hcm-to-epg
+  - peacock/int-129-payroll-costs-hcm-to-gl
+  - peacock/int-131-colleague-hcm-to-reflexis-hrba
+  - peacock/int-135-time-reflexis-to-hcm
+  - peacock/int-136-absence-reflexis-to-hcm
+  - peacock/int-137-colleague-absence-hcm-to-reflexis
+  - peacock/int-138-colleague-schedule-reflexis-to-hcm
+  - peacock/int-139-colleague-hcm-to-empcenter
+  - peacock/int-140-absbal-hcm-empcenter
+  - peacock/int-141-time-empcenter-to-hcm
+  - peacock/int-142-absence-empcenter-to-hcm
+  - peacock/int-143-schedule-empcenter-to-hcm
+  - peacock/int-144-benefits-reward-to-hcm
+  - peacock/int-145-colleague-hcm-to-reward
+  - peacock/int-146-payroll-starting-position-hcm-to-reward
+  - peacock/int-147-employee-specific-benefits-hcm-to-reward
+  - peacock/int-149-colleague-hcm-to-sailpoint
+  - peacock/int-150-email-external-to-hcm
+  - peacock/int-151-colleague-hcm-to-mbase
+  - peacock/int-152-p60-hcm-to-xerox
+  - peacock/int-152-yearly-p60-hcm-to-xerox
+  - peacock/int-154-hcm-hiring-manager-to-eploy
+  - peacock/int-155-eploy-to-hcm
+  - peacock/int-160-weekly-costs-hcm-to-finance
+  - peacock/int-161-colleague-hcm-to-orgpublisher
+  - peacock/int-162-colleague-hcm-to-collservice
+  - peacock/int-165-sortcode-bankwizard-to-hcm
+  - peacock/int-169-colleague-hcm-to-ybs
+  - peacock/int-171-colleague-hcm-to-aviva
+  - peacock/int-171-p2p-colleague-hcm-to-aviva
+  - peacock/int-176-colleague-hcm-to-tb
+  - peacock/int-177-payroll-giving-to-hcm
+  - peacock/int-178-sovereign-to-hcm
+  - peacock/int-181-auto-population-final-close-date
+  - peacock/int-182-auto-population-iep-indicator
+  - peacock/int-183-papersoft-to-hrhelpdesk
+  - peacock/int-184-gibraltar-eft-payment
+  - peacock/int-185-ccv-not-deducted-hcm-to-reward
+  - peacock/int-191-hcm-position-to-eploy
+  - peacock/int-193-contribution-hcm-to-equiniti
+
+#Environments and corresponding credential ID
+env:
+  dev: TERRAFORM_SANDPIT_PEOPLE
+  ops: TERRAFORM_SANDPIT_PEOPLE
+  sit: JENKINS_NONPROD_PEOPLE
+  uat: JENKINS_NONPROD_PEOPLE
+  coex: JENKINS_NONPROD_PEOPLE
+  pre: JENKINS_NONPROD_PEOPLE
+  prd: PEOPLE_TERRAFORM_PROD
+
+#Read only environments
+ro-env:
+  - prd
+  - ops
+
+lambda_bucket:
+  dev: mdev.peacock.people.lambda.kqtizgpble
+  ops: mops.peacock.people.lambda.mkorngxkwq
+  coex: mcoex.peacock.people.lambda.ilkugexwgg
+  pre: mpre.peacock.people.lambda.ecblqihhzw
+  sit: msit.peacock.people.lambda.lstqfstkrc
+  uat: muat.peacock.people.lambda.fpflmyeckk
+  prd: mprd.peacock.people.lambda.mudlyfnnhv
+
